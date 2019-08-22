@@ -1,0 +1,99 @@
+.mine-banner{
+    // margin-top: 10pt;
+    width: 100%; height: 30%;
+    background-color: #fff;
+    text-align: center;
+    .myPhoto{
+        text-align: center;
+        padding: 16pt;
+        img{
+            display: inline;
+        }
+    }
+    p{
+        font-weight: 900;
+        font-size: 1rem;
+        line-height: 24pt;
+        img{
+            display: inline;
+        }
+    }
+    a {
+        display: inline-block;
+        font-size: .75rem;
+        color: #999;
+        width: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        &:first-child {
+            display: block;
+            width: 100%;
+            height: 50%;
+            padding-top: 10%;
+        }
+        span {
+            width: 100%;
+            float: left;
+        }
+    }
+}
+
+.mine-nav{
+    background-color: #fff;
+    margin-top: 5pt;
+    padding: 0 18pt;
+    .mine-items{
+        padding: 0 10px;
+        border-bottom: 1px solid #F1F1F1;
+        overflow: hidden;
+        a{
+            display: block;
+            overflow: hidden;
+            padding: .875rem 0;
+            img{
+                float: left;
+                margin-right: 5px;
+            }
+            span{
+                float: left;
+            }
+            .to-right{
+                float: right;
+                font-size: 20px;
+                font-weight: 900;
+                color: #999;
+            }
+        }
+        
+    }
+}
+
+.setting{
+    display: block;
+    line-height: 50px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    margin-top: 5pt;
+    background-color: #fff;
+}
+
+#mine{
+    background-color: #efefef;
+    height: 100%;
+    overflow: hidden;
+    .mine-wrap{
+        height: 43.75rem;
+    }
+}
+.five-pt{
+    height: 4pt;
+    overflow: hidden;
+}
+
+.scroll-wrap{
+    margin-top: 49px;
+    width: 100%;
+    height: 100%;
+}

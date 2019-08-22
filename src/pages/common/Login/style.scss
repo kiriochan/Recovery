@@ -1,0 +1,88 @@
+#login{
+    .content{
+        box-sizing: border-box;
+        padding: 20px;
+        .logo_wrap{
+            display: flex;
+            .logo{
+                width: 51pt;
+                height: 51pt;
+                margin-right: 13pt;
+            }
+            h1{
+                font-size: 1.875rem;
+                color: #36465D;
+            }
+            p{
+                color: #8e8e8e;
+                font-size: .75rem;
+            }
+        }
+
+        h2{
+            margin-left: 20pt;
+            font-size: 2.125rem;
+            margin: 50px 0 10px 20pt;
+        }
+
+        .input-wrap{
+            border-bottom: 1px dashed #36465D;
+            padding: 20px 0 10px 0;
+            margin-bottom: 10px;
+            input{
+                width: 72%;
+                font-size: 1rem;
+                border: none;
+                outline: none;
+                padding: 8px 0;   
+            }
+            input::-webkit-input-placeholder{
+                color: #8e8e8e;
+                font-size: 14px;
+            }
+            input::-moz-input-placeholder{ 
+                color: #8e8e8e;
+                font-size: 14px;
+            }
+            input::-ms-input-placeholder{ 
+                color: #8e8e8e;
+                font-size: 14px;
+            }
+            span{
+                color: #fff;
+                background-color: #36465D;
+                padding: 6px 30px;
+                border-radius: 14px;
+                font-size: 14px;
+            }
+        }
+
+        .login-btn{
+            color: #fff;
+            font-size: 14px;
+            background-color: #36465D;
+            border-radius: 16px;
+            line-height: 40px;
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .other-login-ways{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            p{
+                width: 100%;
+                text-align: center;
+                color: #2C2C2C;
+                font-size: .875rem;
+            }
+            img{
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+
