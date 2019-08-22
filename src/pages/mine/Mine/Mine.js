@@ -8,7 +8,6 @@ export default class Mine extends Component {
         phone: '',
         code: ''
     }
-
     render(){
         return (
             <div id="mine" className="subpage">

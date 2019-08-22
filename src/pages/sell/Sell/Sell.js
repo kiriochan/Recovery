@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import TabBar from '../../../components/tab-bar/tab-bar'
+import TabBar from '../../../components/tab-bar/tab-bar';
+import SellHeader from '../children/sell-header';
 import './style.scss';
 
 
@@ -9,8 +10,9 @@ export default class Sell extends Component {
 
     render(){
         return (
-            <div>
-                <h1>卖手机</h1>
+            <div id='sell'>
+                <SellHeader></SellHeader>
+                <h1 onClick={this.hAction.bind(this)}>卖手机</h1>
 
 
 
@@ -19,6 +21,10 @@ export default class Sell extends Component {
 
             </div>
         )
+    }
+    hAction(){
+        console.log(this.props);
+        this.props.history.push('/sell/search');
     }
 
 }

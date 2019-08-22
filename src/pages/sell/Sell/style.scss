@@ -1,0 +1,56 @@
+#sell {
+    width: 100%;
+    .sell-header {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        background: #FF4747;
+        justify-content: space-between;
+        .header-left {
+            margin: 0 .3125rem 0 .625rem;
+            line-height: 44px;
+            color: #fff;
+            span {
+                font-size: 14px;
+                padding-right: .3125rem;
+            }
+            i {
+                font-size: .75rem;
+            }
+        }
+        .header-search {
+            width: 72%;
+            height: 2rem;
+            margin: .375rem 0;
+            border-radius: 1.25rem;
+            display: flex;
+            background: #fff;
+            img {
+                width: 1.25rem;
+                margin: .375rem .625rem;
+            }
+            .btn {
+                border: none;
+                outline: none;
+                width: 68%;
+                margin-right: .625rem;
+            }
+            i {
+                font-size: 22px;
+                line-height: 2.1875rem;
+            }
+        }
+        .header-right {
+            margin-right: 5px;
+            text-align: center;
+            color: #fff;
+            i {
+                font-size: 22px;
+                line-height: 30px;
+            }
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+}
