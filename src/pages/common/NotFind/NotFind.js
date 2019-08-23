@@ -1,9 +1,11 @@
 import React from 'react'
+import './style.scss'
+
 export default (props)=>{
     return (
-        <div>
-            <h1>404</h1>
-            <h2>你访问的页面不存在！</h2>
+        <div className='page' id='not_find'>
+            <img src='/images/404.png' alt=''/>
+            <p>对不起，没有您要找的页面</p>
         </div>
     )
 }

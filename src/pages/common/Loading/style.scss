@@ -1,0 +1,18 @@
+#loading {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+    p {
+        text-align: center;
+        color: #666;
+        font-size: 16px;
+        margin: 20px;
+    }
+}

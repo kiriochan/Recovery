@@ -1,21 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import './style.scss'
 
 const ErrorPanel = ()=>{
     return (
-        <div>出错了</div>
+         <div className='error'>
+            <img src="/images/error.png" alt=''/>
+            <p>崩溃了~请尝试刷新</p>
+        </div>
     )
 }
 
-export default class ErrorBoundary extends Component {
-    state = {
-        isError: false
+class ErrorBoundary extends Component {
+    state={
+        isError:false
     }
-
-    render(){
+    render() {
         return this.state.isError ? <ErrorPanel/> : this.props.children;
     }
 
-    componentDidCatch(){// 处理错误的固定方法: componentDidCatch
-        this.setState({isError: true});
+    componentDidCatch(){
+        this.setState({isError:true});
     }
+
 }
+
+export default ErrorBoundary;

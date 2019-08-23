@@ -12,7 +12,6 @@ export default (state = initialState, action)=>{
 };
 
 export const test = (params) => async (dispatch) => {
-    console.log('params','params');
     let result = await ajax(api.TEST);
 
     console.log('result',result);
