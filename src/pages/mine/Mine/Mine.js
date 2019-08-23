@@ -13,7 +13,6 @@ class Mine extends Component {
         sendClassName: '',
         loginClassName: ''
     }
-
     render(){
         let {loginTip, sendCodeAction, loginByCodeAction} = this.props;
         let disable = loginTip.endsWith('s');

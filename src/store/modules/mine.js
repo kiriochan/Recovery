@@ -1,7 +1,7 @@
 // duck mode
 
 import api from '../../request/api'
-import {post, get} from '../../request/request'
+import {post, get} from '../../request'
 
 // types
 const CHANGE_LOGIN_TIP = 'user/change_login_tip';

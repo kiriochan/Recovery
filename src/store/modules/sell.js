@@ -1,9 +1,39 @@
 // state
+import {get} from '../../request'
+import api from "../../request/api";
+
+const SET_HOME_DATA = 'home/set_home_data';
+
 const initialState = {
-    orderlist: []
+    homeData: {}
 };
 
 // reducer
-export default (state = initialState, action)=>{
+export default (state = initialState, action) => {
+    switch (action.type) {
+        case SET_HOME_DATA:
+            return {
+                ...state,
+                homeData: action.value
+            }
+        default :
+            return state;
+    }
+
     return state;
 };
+
+const setHomeData = (value) => (
+    {
+        type: SET_HOME_DATA,
+        value
+    }
+)
+
+export const requestData = () => async (dispatch) => {
+    let result = await get(api.TEST);
+
+    dispatch(setHomeData(result.data))
+    console.log('result', result.data);
+
+}
