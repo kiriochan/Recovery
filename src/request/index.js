@@ -10,10 +10,8 @@ export const get = async (url, params = {}) => {
         })
         // 发送请求,得到响应对象
         let response = await fetch(`${url}${paramsStr}`);
-        console.log('response',response)
         // 解析数据，当成文本解析
         let result = await response.json();
-        console.log('result',result)
         // 解析完成，得到结果
         if (result.code === 0) {
             return result;
