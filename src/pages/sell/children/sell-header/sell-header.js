@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
+import './style.scss';
 
 class SellSearch extends Component {
     render() {
@@ -24,8 +25,6 @@ class SellSearch extends Component {
         );
     }
     searchAction(){
-        console.log(this.props);
-        
         this.props.history.push('/sell/search');
     }
 }
