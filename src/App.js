@@ -2,7 +2,6 @@ import React, {lazy,Suspense} from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Loading from './pages/common/Loading/Loading'
-import TabBar from './components/tab-bar/tab-bar'
 
 
 const Mine = lazy(()=>import('./pages/mine/Mine/Mine'));
@@ -25,8 +24,6 @@ const AppPanel = (props)=>{
                     <Route path='/mine' component={Mine}/>
                     <Route component={NotFind}/>
                 </Switch>
-                
-                <TabBar />
 
             </div>
         </Router>
