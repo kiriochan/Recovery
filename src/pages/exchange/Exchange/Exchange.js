@@ -1,34 +1,32 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import AppScroll from '../../../components/app-scroll/app-scroll'
 import TabBar from '../../../components/tab-bar/tab-bar'
+import AppHeader from '../../../components/app-header/app-header'
 import './style.scss';
-import {test} from "../../../store/modules/exchange";
 
 
-class Exchange extends Component {
+export default class Exchange extends Component {
 
-    render() {
+    render(){
         return (
-            <div>
-                <h1 onClick={this.props.testClick}>换新机</h1>
+            <div className="exchange">
+                <AppHeader title="速回收以旧换新"></AppHeader>
+                <AppScroll className="exchange-content">
+                    <div className="search" onClick={this.goSearch.bind(this)}>
+                        <input className="ipt" type="text" placeholder="搜索您需要的机型"/>
+                        <span className="iconfont iconfangdajing"></span>
+                    </div>
 
+                </AppScroll>
 
-                <TabBar/>
-
+                <TabBar />
             </div>
         )
     }
+    goSearch(){
+        // console.log(this.props);
+        this.props.history.push('/sell/search');
+
+    }
 
 }
-
-
-const mapStateToProps = (state) => ({})
-
-
-const mapDispatchToProps = (dispatch) => ({
-    testClick() {
-        dispatch(test());
-    }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Exchange);

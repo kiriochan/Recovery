@@ -1,5 +1,5 @@
 // state
-import {get,post} from '../../request'
+import {get} from '../../request'
 import api from "../../request/api";
 
 const initialState = {
