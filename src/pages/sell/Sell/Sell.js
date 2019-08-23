@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {test} from '../../../store/modules/sell'
+
 import AppScroll from '../../../components/app-scroll/app-scroll';
+
+import {requestData} from '../../../store/modules/sell'
 import TabBar from '../../../components/tab-bar/tab-bar'
 import SellHeader from '../children/sell-header/sell-header';
 import Banner from '../children/sell-banner/sell-banner';
@@ -11,6 +13,7 @@ import './style.scss';
 
 class Sell extends Component {
     render(props) {
+        let {homeData} = this.props;
         return (
             <div id='sell'>
                 <SellHeader></SellHeader>
@@ -26,15 +29,25 @@ class Sell extends Component {
             </div>
         )
     }
+    componentDidMount(){
+        this.props.initData();  
+    }
 }
 
 
-const mapStateToProps = (state) => ({})
+
+
+
+
+
+const mapStateToProps = (state) => ({
+    homeData: state.sell.homeData,
+})
 
 
 const mapDispatchToProps = (dispatch) => ({
-    testClick() {
-        dispatch(test());
+    initData() {
+        dispatch(requestData());
     }
 })
 

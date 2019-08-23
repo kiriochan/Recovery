@@ -1,5 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+
 import mine from './modules/mine'
 import exchange from './modules/exchange'
 import sell from './modules/sell'

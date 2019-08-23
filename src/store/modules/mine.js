@@ -1,16 +1,20 @@
+// duck mode
 
 import api from '../../request/api'
 import {post, get} from '../../request'
 
+// types
 const CHANGE_LOGIN_TIP = 'user/change_login_tip';
 const SET_LOGIN_STATUS = 'user/set_login_status';
 
+// state
 const initialState = {
-    isLogin: true,
-    loginTip: '获取',
+    isLogin: false,
+    loginTip: '发送验证码',
     userInfo: {}
 };
 
+// reducer
 export default (state = initialState, action)=>{
     switch (action.type) {
         case CHANGE_LOGIN_TIP:
@@ -61,12 +65,12 @@ export const requestSendCodeAction = (phone) => async (dispatch) => {
             if(time < 0){
                 //倒计时完成，重新发送
                 clearInterval(timer);
-                dispatch(getChangeTipAction('重发'));
+                dispatch(getChangeTipAction('重新发送'));
             }
             
         }, 1000);
     } catch (error) {
-        dispatch(getChangeTipAction('失败'));
+        dispatch(getChangeTipAction('重新发送'));
     }    
 }
 
