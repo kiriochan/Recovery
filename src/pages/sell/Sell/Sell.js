@@ -12,6 +12,8 @@ export default class Sell extends Component {
         return (
             <div id='sell'>
                 <SellHeader></SellHeader>
+
+               
                 <h1 onClick={this.hAction.bind(this)}>卖手机</h1>
 
 
@@ -24,7 +26,7 @@ export default class Sell extends Component {
     }
     hAction(){
         console.log(this.props);
-        this.props.history.push('/sell/search');
+        
     }
 
 }
