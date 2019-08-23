@@ -8,6 +8,9 @@ const LOGIN_BY_CODE_API = '/poxyA/api/user/login/login_by_code';
 // 检查登录是否过期
 const CHECK_LOGIN_API = '/poxyA/api/user/check_login';
 
+//退出登录接口
+const LOGOUT_API = '/poxyA/api/user/logout'
+
 
 const TEST = '/poxyA/api/home/home'
 const EXCHANGE_URL = '/poxyA/api/exchange/exchange'
@@ -18,6 +21,7 @@ export default {
     EXCHANGE_URL,
     SEND_CODE_API,
     LOGIN_BY_CODE_API,
-    CHECK_LOGIN_API
+    CHECK_LOGIN_API,
+    LOGOUT_API
 
 }
