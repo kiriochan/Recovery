@@ -1,6 +1,6 @@
 
 import api from '../../request/api'
-import {post, get} from '../../request/index1'
+import {post, get} from '../../request'
 
 const CHANGE_LOGIN_TIP = 'user/change_login_tip';
 const SET_LOGIN_STATUS = 'user/set_login_status';
