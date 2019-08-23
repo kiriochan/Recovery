@@ -1,5 +1,5 @@
 // state
-import {get,post} from '../../request'
+import ajax from "../../request/index";
 import api from "../../request/api";
 
 const initialState = {
@@ -12,7 +12,7 @@ export default (state = initialState, action)=>{
 };
 
 export const test = (params) => async (dispatch) => {
-    let result = await get(api.TEST);
+    let result = await ajax(api.TEST);
 
     console.log('result',result);
 
