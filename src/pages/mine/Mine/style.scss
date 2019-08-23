@@ -49,7 +49,10 @@
                     font-size: 1rem;
                 }
                 .phone-num{
-                    width: 50%;
+                    width: 80%;
+                }
+                .code-num{
+                    width: 42%;
                 }
                 .send-code{
                     float: right;
@@ -60,6 +63,12 @@
                     padding: 0 1.5rem;
                     border-radius: 0.8rem;
                 }
+                .phoneOk{
+                    background-color: #EE394B;
+                }
+            }
+            .phoneOkAndphoneOk{
+                background-color: #EE394B;
             }
             button{
                 background-color: #FDA0A0;
