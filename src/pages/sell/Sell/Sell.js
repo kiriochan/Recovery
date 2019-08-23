@@ -1,32 +1,41 @@
 import React, {Component} from 'react';
-import TabBar from '../../../components/tab-bar/tab-bar';
-import SellHeader from '../children/sell-header';
+import {connect} from 'react-redux';
+import {test} from '../../../store/modules/sell'
+import AppScroll from '../../../components/app-scroll/app-scroll';
+import TabBar from '../../../components/tab-bar/tab-bar'
+import SellHeader from '../children/sell-header/sell-header';
+import Banner from '../children/sell-banner/sell-banner';
+import SellFree from '../children/sell-free/sell-free';
+import SellHot from '../children/sell-hot/sell-hot';
 import './style.scss';
 
-
-
-export default class Sell extends Component {
-
-
-    render(){
+class Sell extends Component {
+    render(props) {
         return (
             <div id='sell'>
                 <SellHeader></SellHeader>
-
-               
-                <h1 onClick={this.hAction.bind(this)}>卖手机</h1>
-
-
-
-                                
-                <TabBar />
-
+                <AppScroll className='content'>
+                    <Banner/>
+                    <SellFree/>
+                    <SellHot/>
+                    <p onClick={this.props.testClick}>卖手机</p>
+                    
+                </AppScroll>
+                
+                <TabBar/>
             </div>
         )
     }
-    hAction(){
-        console.log(this.props);
-        
-    }
-
 }
+
+
+const mapStateToProps = (state) => ({})
+
+
+const mapDispatchToProps = (dispatch) => ({
+    testClick() {
+        dispatch(test());
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sell);
