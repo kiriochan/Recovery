@@ -31,7 +31,15 @@ const setHomeData = (value) => (
 )
 
 export const requestData = () => async (dispatch) => {
-    let result = await get(api.TEST);
+    let result = await get(api.SELL_URL);
+
+    dispatch(setHomeData(result.data))
+    console.log('result', result.data);
+
+}
+
+export const requestCategoryData = () => async (dispatch) => {
+    let result = await get(api.SELL_URL);
 
     dispatch(setHomeData(result.data))
     console.log('result', result.data);

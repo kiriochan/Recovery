@@ -5,7 +5,7 @@
         left: 0;
         top: 44px;
         bottom: 49px;
-        background: lemonchiffon;
+        background: #fff;
         .search {
             width: 90%;
             display: flex;
@@ -25,6 +25,107 @@
                 background: #fff;
                 font-size: 20px;
                 padding-right: .625rem;
+            }
+        }
+        .banner {
+            width: 100%;
+            padding-top: .625rem;
+            img {
+                width: 96%;
+                margin: 0 auto;
+            }
+        }
+        .adsbtn {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.25rem;
+            li {
+                border: solid 1px #ccc;
+                background: #fff;
+                padding: .1875rem .3125rem;
+                border-radius: .125rem;
+            }
+        }
+        .exchange-item {
+            width: 100%;
+            background: #fff;
+            margin-top: 1.25rem;
+            .exchange-title {
+                border-left: solid .1875rem #FFC95C;
+                padding-left: .3125rem;
+                font-size: 16px;
+                font-weight: 900;
+                margin-bottom: .9375rem;
+            }
+            .exchange-list {
+                width: 95%;
+                display: flex;
+                justify-content: space-between;
+                // padding: 0 .625rem;
+                border: solid 1px #F4F3F3;
+                margin: 0 auto;
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    padding: .625rem;
+                    .iconfont {
+                        font-size: 32px;
+                        color: #F94C66;
+                    }
+                }
+            }
+        }
+        .change-new {
+            width: 96%;
+            background: #fff;
+            margin: .625rem auto;
+            .change-header {
+                display: flex;
+                justify-content: space-between;
+                padding: .625rem 0;
+                .exchange-title {
+                    border-left: solid .1875rem #FFC95C;
+                    padding-left: .3125rem;
+                    font-size: 16px;
+                    font-weight: 900;
+                }
+                .exchange-more {
+                    font-size: 14px;
+                    color: #999999;
+                }
+            }
+            .products-content {
+                // background: #F94C66;
+                width: 98%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                .products-item {
+                    width: 46%;
+                    margin: 10px 6px;
+                    border: solid 1px #F4F4F4;
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        height: 11.25rem;
+                    }
+                    .products-text {
+                        .products-title {
+                            width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            font-size: 1rem;
+                            font-weight: 900;
+                            text-align: center;
+                        }
+                        .products-price {
+                            font-size: 14px;
+                            color: #999;
+                            text-align: center;
+                        }
+                    }
+                }
             }
         }
     }

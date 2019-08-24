@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../../../../components/app-header/app-header';
+import Header from '../../../../../components/app-header/app-header';
 import './style.scss';
 
 class SelectCity extends Component {

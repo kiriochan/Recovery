@@ -2,10 +2,12 @@
 
 import api from '../../request/api'
 import {post, get} from '../../request'
+import 'whatwg-fetch'
 
 // types
 const CHANGE_LOGIN_TIP = 'user/change_login_tip';
 const SET_LOGIN_STATUS = 'user/set_login_status';
+const SET_USER_INFO = 'user/set_user_info';
 
 // state
 const initialState = {
@@ -27,6 +29,11 @@ export default (state = initialState, action)=>{
                 ...state,
                 isLogin: action.value
             };
+        case SET_USER_INFO:
+            return {
+                ...state,
+                userInfo: action.value
+            }
         default:
             return state;
     }
@@ -44,6 +51,11 @@ const setLoginStatusAction = (value)=>({
     value
 })
 
+// 设置用户信息
+const setUserInfo = (value)=>({
+    type: SET_USER_INFO,
+    value
+})
 
 
 // 异步actions 
@@ -77,9 +89,11 @@ export const requestSendCodeAction = (phone) => async (dispatch) => {
 // 电话号码和验证码登录
 export const requestLoginByCodeAction = (phone, code) => async (dispatch) => {
     try {
-        await post(api.LOGIN_BY_CODE_API, {phone, code});
+        let result = await post(api.LOGIN_BY_CODE_API, {phone, code});
+        console.log(result);
         let action = setLoginStatusAction(true);
         dispatch(action);
+        dispatch(setUserInfo(result.data));
     } catch (error) {
         console.log('登录失败');
     }
@@ -89,9 +103,13 @@ export const requestLoginByCodeAction = (phone, code) => async (dispatch) => {
 export const requestCheckLoginAction = () => async (dispatch)=>{
     try {
         // 登录没有过期，设置登录状态
-        await get(api.CHECK_LOGIN_API);
+        let result = await get(api.CHECK_LOGIN_API);
+        // 设置登录了的状态
         let action = setLoginStatusAction(true);
         dispatch(action);
+        // 设置用户信息
+        let userinfo = result.data;
+        dispatch(setUserInfo(userinfo));
     } catch (error) {
         // 登录没有过期，设置登录状态为false
         let action = setLoginStatusAction(false);
@@ -99,3 +117,15 @@ export const requestCheckLoginAction = () => async (dispatch)=>{
     }
 }
 
+// 退出登录
+export const requestLoginOut = ()=>async (dispatch)=>{
+    // 移除session
+    let result = await get(api.LOGOUT_API);
+    console.log(result);
+    // 设置登录状态
+    dispatch(setLoginStatusAction(false));
+    //
+    dispatch(getChangeTipAction('重新发送'));
+    // 清空用户数据
+    dispatch(setUserInfo({}));
+}

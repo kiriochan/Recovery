@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Header from '../../../components/app-header/app-header';
 import './style.scss';
 import { Toast } from 'antd-mobile';
-import {requestSendCodeAction, requestLoginByCodeAction, requestCheckLoginAction} from '../../../store/modules/mine';
+import {requestSendCodeAction, requestLoginByCodeAction, requestCheckLoginAction, requestLoginOut} from '../../../store/modules/mine';
 
 
 class Mine extends Component {
@@ -14,7 +14,7 @@ class Mine extends Component {
         loginClassName: ''
     }
     render(){
-        let {loginTip, sendCodeAction, loginByCodeAction} = this.props;
+        let {loginTip,isLogin, sendCodeAction, loginByCodeAction, loginOutAction} = this.props;
         let disable = loginTip.endsWith('s');
         return (
             <div id="mine" className="subpage">
@@ -33,33 +33,41 @@ class Mine extends Component {
                         </div>
                     </div>
 
-                    <div className="inpt-wrap">
-
-                        <div className="inpt-phone">
-                            <span className="iconfont icon-items">&#xe6c7;</span>
-                            <input type="number" placeholder="请输入手机号码" className="phone-num"
-                             value={this.state.phone} onChange={this.phoneAction}/>
+                    
+                        {
+                        isLogin ? 
+                        <div className="logined">
+                            <p>您已成为我们的 <b>超级会员</b>！</p>
+                            <button onClick={loginOutAction}>
+                                退出登录
+                            </button>
                         </div>
+                        :
+                        <div className="inpt-wrap">
 
-                        <div className="inpt-password">
-                            <span className="iconfont icon-items">&#xe651;</span>
-                            <input type="number" placeholder="请输入验证码" className="code-num"
-                            value={this.state.code} onChange={this.codeAction}/>
-                            <span className={`send-code${this.state.sendClassName}`}
-                                onClick={()=>{return disable ? '' : sendCodeAction(this.state.phone);}}>
-                                {loginTip}
-                            </span>
+                            <div className="inpt-phone">
+                                <span className="iconfont icon-items">&#xe6c7;</span>
+                                <input type="number" placeholder="请输入手机号码" className="phone-num"
+                                value={this.state.phone} onChange={this.phoneAction}/>
+                            </div>
+
+                            <div className="inpt-password">
+                                <span className="iconfont icon-items">&#xe651;</span>
+                                <input type="password" placeholder="请输入验证码" className="code-num"
+                                value={this.state.code} onChange={this.codeAction}/>
+                                <span className={`send-code${this.state.sendClassName}`}
+                                    onClick={()=>{return disable ? '' : sendCodeAction(this.state.phone);}}>
+                                    {loginTip}
+                                </span>
+                            </div>
+
+                            <button className={`login${this.state.sendClassName}${this.state.loginClassName}`}
+                            onClick={()=>loginByCodeAction(this.state.phone, this.state.code)}>
+                            登录
+                            </button>
                         </div>
-
-                        <button className={`login${this.state.sendClassName}${this.state.loginClassName}`}
-                         onClick={()=>loginByCodeAction(this.state.phone, this.state.code)}>
-                        登录
-                        </button>
-                    </div>
-
+                        }
                 </div>
-
-
             </div>
         )
     }
@@ -92,13 +100,13 @@ class Mine extends Component {
     }
     codeAction = (ev)=>{
         switch(ev.target.value.length){
-            case 0: case 1: case 2: case 3:
+            case 0: case 1: case 2: case 3: case 4: case 5:
                 this.setState({
                     code: ev.target.value,
                     loginClassName: ""
                 })
             break;
-            case 4:
+            case 6:
                 this.setState({
                     code: ev.target.value,
                     loginClassName: "AndphoneOk"
@@ -111,7 +119,8 @@ class Mine extends Component {
 }
 
 const mapStateToProps = (state)=>({
-    loginTip: state.mine.loginTip
+    loginTip: state.mine.loginTip,
+    isLogin: state.mine.isLogin
 })
 
 const mapDispatchToProps = (dispatch)=>({
@@ -138,6 +147,11 @@ const mapDispatchToProps = (dispatch)=>({
     },
     checkLoginAction(){
         let action = requestCheckLoginAction();
+        dispatch(action);
+    },
+    loginOutAction(){
+        console.log('退出登录');
+        let action = requestLoginOut();
         dispatch(action);
     }
 })
