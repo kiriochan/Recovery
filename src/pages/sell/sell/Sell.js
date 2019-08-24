@@ -10,6 +10,9 @@ import SellRecommend from './children/sell-recommend/sell-recommend';
 import SellHeader from './children/sell-header/sell-header';
 import SellFree from './children/sell-free/sell-free';
 import SellHot from './children/sell-hot/sell-hot';
+import SellHighlight from './children/sell-highlight/sell-highlight';
+import SellService from './children/sell-service/sell-service';
+import SellCooperate from './children/sell-cooperate/sell-cooperate';
 import './style.scss';
 
 class Sell extends Component {
@@ -24,8 +27,9 @@ class Sell extends Component {
                     <SellFree/>
                     <SellHot/>
                     <SellRecommend/>
-                    <p onClick={this.props.testClick}>卖手机</p>
-                    
+                    <SellHighlight/>
+                    <SellCooperate/>
+                    <SellService/>
                 </AppScroll>
                 
                 <TabBar/>
