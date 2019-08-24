@@ -96,7 +96,7 @@
                 }
             }
             .products-content {
-                // background: #F94C66;
+                // background: lightcyan;
                 width: 98%;
                 margin: 0 auto;
                 display: flex;
@@ -106,9 +106,11 @@
                     margin: 10px 6px;
                     border: solid 1px #F4F4F4;
                     text-align: center;
+                    position: relative;
                     img {
                         width: 100%;
                         height: 11.25rem;
+                        padding-top: 20px;
                     }
                     .products-text {
                         .products-title {
@@ -123,6 +125,78 @@
                             font-size: 14px;
                             color: #999;
                             text-align: center;
+                            padding: .3125rem 0;
+                            span {
+                                color: #F9415D;
+                            }
+                        }
+                    }
+                    .enjoy {
+                        font-size: 14px;
+                        color: #F9415D;
+                        padding-bottom: 5px;
+                    }
+                    .change-newphone {
+                        color: white;
+                        background: #F9415D;
+                        border: solid 1px #F9415D;
+                        width: 50%;
+                        margin: 0 auto;
+                        border-radius: 15px;
+                        padding: 2px 0;
+                        margin-bottom: 20px;
+                    }
+                    .products-discount {
+                        font-size: 12px;
+                        color: white;
+                        background: #F9415D;
+                        border: solid 1px #F9415D;
+                        width: 30%;
+                        margin: 0 auto;
+                        border-radius: 0 0 0 15px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        .service {
+            width: 98%;
+            // background: lightcyan;
+            .service-title {
+                width: 100%;
+                font-size: 16px;
+                text-align: center;
+                height: 2.5rem;
+                line-height: 2.5rem;
+                font-weight: blod;
+            }
+            .service-list {
+                width: 98%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                .service-item {
+                    width: 45%;
+                    display: flex;
+                    border: solid 1px #F4F4F4;
+                    margin: 5px 5px;
+                    padding: 20px 0;
+                    span {
+                        font-size: 30px;
+                        color: #F9415D;
+                        padding-left: 10px;
+                    }
+                    .service-text {
+                        padding-left: 10px;
+                        .title {
+                            font-size: .875rem;
+                            color: black;
+                        }
+                        .detail {
+                            font-size: .75rem;
+                            color: #9B9B9B;
                         }
                     }
                 }

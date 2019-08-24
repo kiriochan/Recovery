@@ -14,12 +14,12 @@ class Exchange extends Component {
     render(props){
         let {exchangeData} = this.props;
       
-        console.log('123',exchangeData);
+        // console.log('123',exchangeData);
         // console.log(exchangeData.banners);
-        let bannerData=exchangeData.banners;
+        let bannerData=exchangeData.mobilebanners;
         // console.log('234',bannerData);
         let productsData=exchangeData.products;
-        console.log('098',productsData);
+        // console.log('098',productsData);
         
         return (
             <div className="exchange">
@@ -57,6 +57,40 @@ class Exchange extends Component {
                             <p className="exchange-more">更多机型<i className="iconfont icontri-up"></i></p>
                         </div>
                         <Products data={productsData}/>
+                    </div>
+                    {/* 服务保障 */}
+                    <div className="service">
+                        <p className="service-title">服务保障</p>
+                        <ul className="service-list">
+                            <li className="service-item">
+                                <span className="iconfont iconjiagebaohu"></span>
+                                <div className="service-text">
+                                    <p className="title">价格保护</p>
+                                    <p className="detail">官方合作报价</p>
+                                </div>
+                            </li>
+                            <li className="service-item">
+                                <span className="iconfont iconweibiaoti-"></span>
+                                <div className="service-text">
+                                    <p className="title">数据安全</p>
+                                    <p className="detail">所有数据 深度粉碎</p>
+                                </div>
+                            </li>
+                            <li className="service-item">
+                                <span className="iconfont iconweibiaoti-"></span>
+                                <div className="service-text">
+                                    <p className="title">品牌信任</p>
+                                    <p className="detail">强强联合 信任无忧</p>
+                                </div>
+                            </li>
+                            <li className="service-item">
+                                <span className="iconfont iconjiagebaohu"></span>
+                                <div className="service-text">
+                                    <p className="title">专业质检</p>
+                                    <p className="detail">标准化专业检测团队</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </AppScroll>
 
