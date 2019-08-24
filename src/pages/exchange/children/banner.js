@@ -4,13 +4,15 @@ export default class Banner extends Component {
   swiperDOM = React.createRef();
   render() {
     let {data} = this.props;
+    // console.log('789',data);
+    
     return (
       <div className="swiper-container" ref={this.swiperDOM}>
         <div className="swiper-wrapper">
         {
-          data.map((item)=>(
+          data && data.map((item)=>(
             <div className="swiper-slide" key={item.id}>
-              <img src={item.url} alt=""/>
+              <img src={item.code} alt={item.name}/>
             </div>
           ))
         }
