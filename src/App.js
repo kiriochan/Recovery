@@ -12,6 +12,7 @@ const Sell = lazy(()=>import('./pages/sell/Sell/Sell'));
 //引入地址错误提示页面
 const NotFind = lazy(()=>import('./pages/common/NotFind/NotFind'));
 const HotSearch = lazy(()=>import('./components/hot-search/hot-search'));
+const SelectCity = lazy(()=>import('./pages/sell/children/select-city/select-city'));
 
 
 
@@ -32,6 +33,7 @@ const AppPanel = (props)=>{
 
                 {/* 卖手机子页面 */}
                 <Route path='/sell/search' component={HotSearch}/>
+                <Route path='/sell/selectCity' component={SelectCity}/>
 
             </div>
         </Router>

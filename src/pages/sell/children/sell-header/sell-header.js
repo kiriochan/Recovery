@@ -6,7 +6,7 @@ class SellSearch extends Component {
     render() {
         return (
             <div className='sell-header'>
-                <div className='header-left'>
+                <div className='header-left' onClick={this.selectCityAction.bind(this)}>
                     <span>深圳</span>
                     <i className='iconfont iconjiantou9'></i>
                 </div>
@@ -26,6 +26,9 @@ class SellSearch extends Component {
     }
     searchAction(){
         this.props.history.push('/sell/search');
+    }
+    selectCityAction(){
+        this.props.history.push('/sell/selectCity');
     }
 }
 

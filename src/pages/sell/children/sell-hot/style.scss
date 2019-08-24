@@ -1,1 +1,19 @@
-.sell-subassembly {}
+.sell-subassembly {
+    .hot-title {
+        display: flex;
+        margin: 1.25rem .8125rem;
+        img {
+            width: 4.625rem;
+            margin-right: .625rem;
+        }
+        span {
+            font-size: .875rem;
+            b {
+                background: #333;
+                color: #fff;
+                padding: 0 .1875rem;
+                margin: 0 .3125rem;
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ class SellFree extends Component {
     render() {
         return (
             <div className='sell-subassembly'>
-                <div className='title'>
+                <div className='free-title'>
                     <div className='left'>
                         <img src="/images/free.png" alt=""/>
                         <i className='iconfont iconwenhao'></i>

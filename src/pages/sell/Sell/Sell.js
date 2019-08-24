@@ -6,9 +6,10 @@ import AppScroll from '../../../components/app-scroll/app-scroll';
 import {requestData} from '../../../store/modules/sell'
 import TabBar from '../../../components/tab-bar/tab-bar'
 import SellHeader from '../children/sell-header/sell-header';
-import Banner from '../children/sell-banner/sell-banner';
+import Banner from '../../../components/app-banner/app-banner';
 import SellFree from '../children/sell-free/sell-free';
 import SellHot from '../children/sell-hot/sell-hot';
+import SellRecommend from '../children/sell-recommend/sell-recommend';
 import './style.scss';
 
 class Sell extends Component {
@@ -21,6 +22,7 @@ class Sell extends Component {
                     <Banner/>
                     <SellFree/>
                     <SellHot/>
+                    <SellRecommend/>
                     <p onClick={this.props.testClick}>卖手机</p>
                     
                 </AppScroll>

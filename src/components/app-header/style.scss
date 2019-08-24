@@ -1,27 +1,27 @@
-.app-header{
+.app-header {
     background-color: #fff;
     width: 100%;
-    height: 49px;
+    height: 44px;
     position: absolute;
     top: 0;
     left: 0;
-    .title{
+    .title {
         width: 100%;
         line-height: 44px;
         text-align: center;
         font-size: 16px;
     }
-    .header-btn{
+    .header-btn {
         height: 24px;
         position: absolute;
         top: 5px;
         padding: 5px 10px;
         line-height: 24px;
         font-size: 14px;
-        &.header-left-btn{
+        &.header-left-btn {
             left: 10px;
         }
-        &.header-right-btn{
+        &.header-right-btn {
             right: 10px;
         }
     }
