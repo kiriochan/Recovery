@@ -1,0 +1,16 @@
+.sell-subassembly {
+    .highlight-title {
+        padding: 1.25rem 0 .9375rem .8125rem;
+        position: relative;
+        img {
+            width: 2.375rem;
+        }
+        .swiper-pagination {
+            top: 15px;
+            right: 25px;
+            .swiper-pagination-bullet-active {
+                background: #666;
+            }
+        }
+    }
+}

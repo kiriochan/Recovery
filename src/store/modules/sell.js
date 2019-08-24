@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
             return state;
     }
 
-    return state;
+    // return state;
 };
 
 const setHomeData = (value) => (

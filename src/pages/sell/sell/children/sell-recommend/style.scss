@@ -1,7 +1,4 @@
 .sell-subassembly {
-    &.recommend {
-        height: 226px;
-    }
     .recommend-title {
         padding: 1.25rem 0 .9375rem .8125rem;
         img {
@@ -9,9 +6,8 @@
         }
     }
     .recommend-content {
-        // background: #ccc;
         height: 150px;
-        margin: .625rem;
+        margin: .9375rem .625rem;
         display: flex;
         h2 {
             font-size: 1rem;

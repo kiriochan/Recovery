@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import {withRouter} from "react-router-dom";
 import './style.scss';
 
 class SellRecommend extends Component {
     render() {
         return (
-            <div className='sell-subassembly recommend'>
+            <div className='sell-subassembly'>
                 <div className='recommend-title border-bottom'>
                     <img src="/images/recommend.png" alt=""/>
                 </div>
                 <div className='recommend-content'>
-                    <div className='rec-left border-right'>
+                    <div className='rec-left border-right' 
+                    onClick={this.toExchangeAction.bind(this)} >
                         <h2>以旧换新</h2>
                         <p>官方授权 正品保障</p>
                         <span>立即参与</span>
@@ -41,6 +43,9 @@ class SellRecommend extends Component {
             </div>
         );
     }
+    toExchangeAction(){
+        this.props.history.push('/exchange');
+    }
 }
 
-export default SellRecommend;
+export default withRouter(SellRecommend);
