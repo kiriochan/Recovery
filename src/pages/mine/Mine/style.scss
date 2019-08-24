@@ -31,6 +31,28 @@
             }
         }
 
+        .logined{
+            margin-top: 30%;
+            p{
+                font-size: 1rem;
+                text-align: center;
+                b{
+                    color: #EE394B;
+                    font-size: 1.375rem;
+                }
+            }
+            button{
+                background-color: #EE394B;
+                width: 100%;
+                line-height: 3rem;
+                border: none;
+                outline: none;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 1rem;
+                margin-top: 5rem;
+            }
+        }
         .inpt-wrap{
             margin-top: 3rem;
             .inpt-phone,.inpt-password{
