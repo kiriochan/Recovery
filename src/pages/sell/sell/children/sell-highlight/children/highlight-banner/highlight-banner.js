@@ -8,28 +8,47 @@ export default class Banner extends Component {
     return (
       <div className="swiper-container" ref={this.swiperDOM}>
         <div className="swiper-wrapper">
-            <div className="swiper-slide">
-                <ul className='highlight-list'>
-                    <li className='highlight-item'>
-                        <div className='item-left'>
-                            <img src="/images/banner.jpg" alt=""/>
-                        </div>
-                        <div className='item-text'> 
-                            <p>速回收联合广西移动，手机回收以旧换新</p>
-                            <span>近日，速回收宣布与广西移动和掌桂 携手，正式开启“以旧换新”合作，通过回</span>
-                        </div>
-                    </li>
-                    <li className='highlight-item'>
-                        <div className='item-left'>
-                            <img src="/images/banner.jpg" alt=""/>
-                        </div>
-                        <div className='item-text'>
-                            <p>速回收联合广西移动，手机回收以旧换新</p>
-                            <span>近日，速回收宣布与广西移动和掌桂 携手，正式开启“以旧换新”合作，通过回</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            {
+                data && data.map((item)=>(
+                    <div className="swiper-slide" key={item.addTime}>
+                        {/* <ul className='highlight-list'>
+                            {
+                                item && item.map((info)=>(
+                                    <li className='highlight-item'>
+                                        <div className='item-left'>
+                                            <img src={info.articleImg} alt=""/>
+                                        </div>
+                                        <div className='item-text'> 
+                                            <p>{info.title}</p>
+                                            <span>{info.articleDesc}</span>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul> */}
+                        <ul className='highlight-list'>
+                            <li className='highlight-item'>
+                                <div className='item-left'>
+                                    <img src={item.articleImg} alt=""/>
+                                </div>
+                                <div className='item-text'> 
+                                    <p>{item.title}</p>
+                                    <span>{item.articleDesc}</span>
+                                </div>
+                            </li>
+                            {/* <li className='highlight-item'>
+                                <div className='item-left'>
+                                    <img src={item.articleImg} alt=""/>
+                                </div>
+                                <div className='item-text'> 
+                                    <p>{item.title}</p>
+                                    <span>{item.articleDesc}</span>
+                                </div>
+                            </li> */}
+                        </ul>
+                    </div>
+                ))
+            }
         </div>
       </div>
     );

@@ -25,9 +25,9 @@ class Sell extends Component {
                 <AppScroll className='content'>
                     <Banner data={homeData.banner}/>
                     <SellFree/>
-                    <SellHot/>
+                    <SellHot data={homeData.activity}/>
                     <SellRecommend/>
-                    <SellHighlight/>
+                    <SellHighlight data={homeData.article}/>
                     <SellCooperate/>
                     <SellService/>
                 </AppScroll>

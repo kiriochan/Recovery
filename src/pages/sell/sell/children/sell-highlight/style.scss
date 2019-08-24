@@ -7,7 +7,12 @@
         }
         .swiper-pagination {
             top: 15px;
-            right: 25px;
+            right: 20px;
+            .swiper-pagination-bullet {
+                width: 6px;
+                height: 6px;
+                margin: 0 2px;
+            }
             .swiper-pagination-bullet-active {
                 background: #666;
             }
