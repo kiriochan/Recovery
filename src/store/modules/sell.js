@@ -3,9 +3,11 @@ import {get} from '../../request'
 import api from "../../request/api";
 
 const SET_HOME_DATA = 'home/set_home_data';
+const SET_CATEGORY_DATA = 'home/set_category_data';
 
 const initialState = {
-    homeData: {}
+    homeData: {},
+    category:{},
 };
 
 // reducer
@@ -15,6 +17,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 homeData: action.value
+            }
+        case SET_CATEGORY_DATA:
+            return {
+                ...state,
+                category:action.value
             }
         default :
             return state;
@@ -30,6 +37,13 @@ const setHomeData = (value) => (
     }
 )
 
+const setCategoryData = (value) => (
+    {
+        type: SET_CATEGORY_DATA,
+        value
+    }
+)
+
 export const requestData = () => async (dispatch) => {
     let result = await get(api.SELL_URL);
 
@@ -38,10 +52,12 @@ export const requestData = () => async (dispatch) => {
 
 }
 
-export const requestCategoryData = () => async (dispatch) => {
-    let result = await get(api.SELL_URL);
-
-    dispatch(setHomeData(result.data))
+export const requestCategoryData = (params) => async (dispatch) => {
+    let result = await get(api.SELL_CATEGORY, {
+        "typeId": params.typeId,
+        "id": params.id
+    });
+    dispatch(setCategoryData(result.data))
     console.log('result', result.data);
 
 }

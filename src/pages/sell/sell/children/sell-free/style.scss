@@ -1,68 +1,83 @@
 .sell-subassembly {
-    .free-title {
-        display: flex;
-        justify-content: space-between;
-        div {
-            margin: 20px 13px;
-        }
-        .left {
-            position: relative;
-            img {
-                width: 52px;
-            }
-            i {
-                position: absolute;
-                top: -0.5rem;
-                left: 3.5375rem;
-                font-size: 1.125rem;
-            }
-        }
-        .right {
-            i {
-                font-size: 1.125rem;
-                padding-right: .3125rem;
-                color: #888;
-            }
-            span {
-                font-size: 14px;
-                color: #777;
-            }
-        }
+  .free-title {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      margin: 20px 13px;
     }
-    .free-content {
-        .list {
-            display: flex;
-            justify-content: space-around;
-            .item {
-                margin: 10px 0;
-                img {
-                    border-radius: 50%;
-                    width: 2.5rem;
-                }
-                p {
-                    font-size: 14px;
-                    text-align: center;
-                    margin-top: 10px;
-                }
-                &:nth-of-type(3) {
-                    margin: 0;
-                    img {
-                        width: 3.75rem;
-                    }
-                }
-            }
-        }
+
+    .left {
+      position: relative;
+
+      img {
+        width: 52px;
+      }
+
+      i {
+        position: absolute;
+        top: -0.5rem;
+        left: 3.5375rem;
+        font-size: 1.125rem;
+      }
     }
-    .btn {
-        width: 60%;
-        background: #FF4447;
-        border-radius: 1.25rem;
-        margin: 1.25rem auto;
+
+    .right {
+      i {
+        font-size: 1.125rem;
+        padding-right: .3125rem;
+        color: #888;
+      }
+
+      span {
+        font-size: 14px;
+        color: #777;
+      }
+    }
+  }
+
+  .free-content {
+    .list {
+      display: flex;
+      justify-content: space-around;
+
+      .item {
+        margin: 10px 0;
+
+        img {
+          border-radius: 50%;
+          width: 2.5rem;
+        }
+
         p {
-            text-align: center;
-            line-height: 2.25rem;
-            font-weight: bolder;
-            color: #fff;
+          font-size: 14px;
+          text-align: center;
+          margin-top: 10px;
         }
+
+        &:nth-of-type(3) {
+          margin: 0;
+
+          img {
+            width: 3.75rem;
+          }
+        }
+      }
     }
+  }
+
+  .btn {
+    width: 60%;
+    background: #FF4447;
+    border-radius: 1.25rem;
+    margin: 1.25rem auto;
+
+    .btn-text {
+      text-align: center;
+      line-height: 2.25rem;
+      font-weight: bolder;
+      color: #fff;
+      display: block;
+    }
+  }
 }

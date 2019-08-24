@@ -8,6 +8,7 @@ export const get = async (url, params = {}) => {
             paramsStr += (index === 0) ? '?' : '&';
             paramsStr += `${key}=${encodeURIComponent(value)}`;
         })
+        console.log('paramsStr',paramsStr);
         // 发送请求,得到响应对象
         let response = await fetch(`${url}${paramsStr}`);
         // 解析数据，当成文本解析

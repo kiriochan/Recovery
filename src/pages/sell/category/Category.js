@@ -1,10 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import CategoryNav from './children/category-nav';
 import './style.scss'
+import CategoryLeft from './children/category-left';
+import CategoryRight from './children/category-right';
 
 class Category extends React.PureComponent {
-
     render() {
+        let {category} = this.props;
+        console.log('category',category);
         return (
             <div className={'category'}>
                 <div className='content'>
@@ -20,13 +24,22 @@ class Category extends React.PureComponent {
                         </div>
 
                     </div>
+
+                    <CategoryNav/>
+
+                    <div className={'content-scroll'}>
+                        <CategoryLeft data={category.brands}/>
+                        <CategoryRight data={category.products}/>
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({
+    category: state.sell.category,
+})
 
 
 const mapDispatchToProps = (dispatch) => ({})

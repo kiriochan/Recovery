@@ -12,7 +12,8 @@ const CHECK_LOGIN_API = '/poxyA/api/user/check_login';
 const LOGOUT_API = '/poxyA/api/user/logout'
 
 
-const SELL_URL = '/poxyA/api/home/home'
+const SELL_URL = '/poxyA/api/home/home';
+const SELL_CATEGORY = '/poxyA/api/home/category'
 const EXCHANGE_URL = '/poxyA/api/exchange/exchange'
 
 export default {
@@ -22,6 +23,7 @@ export default {
     SEND_CODE_API,
     LOGIN_BY_CODE_API,
     CHECK_LOGIN_API,
-    LOGOUT_API
+    LOGOUT_API,
+    SELL_CATEGORY
 
 }
