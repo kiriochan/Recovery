@@ -7,11 +7,12 @@ import Loading from './pages/common/Loading/Loading'
 //引入三个主页面
 const Mine = lazy(()=>import('./pages/mine/Mine/Mine'));
 const Exchange = lazy(()=>import('./pages/exchange/Exchange/Exchange'));
-const Sell = lazy(()=>import('./pages/sell/Sell/Sell'));
+const Sell = lazy(()=>import('./pages/sell/sell/Sell'));
 
 //引入地址错误提示页面
 const NotFind = lazy(()=>import('./pages/common/NotFind/NotFind'));
 const HotSearch = lazy(()=>import('./components/hot-search/hot-search'));
+const Category = lazy(()=>import('./pages/sell/category/Category'));
 
 
 
@@ -32,6 +33,7 @@ const AppPanel = (props)=>{
 
                 {/* 卖手机子页面 */}
                 <Route path='/sell/search' component={HotSearch}/>
+                <Route path='/sell/category' component={Category}/>
 
             </div>
         </Router>
