@@ -12,7 +12,7 @@ export default class Banner extends Component {
         {
           data && data.map((item)=>(
             <div className="swiper-slide" key={item.id}>
-              <img src={item.code} alt={item.name}/>
+              <img src={item.code} alt={item.name} onClick={this.goDatail.bind(this,item.link)}/>
             </div>
           ))
         }
@@ -20,8 +20,14 @@ export default class Banner extends Component {
         <div className="swiper-pagination" />
       </div>
     );
+    
   }
-
+  goDatail(url){
+    // console.log(123);
+    
+    window.location.href=url
+  }
+ 
   componentDidMount(){
     // 初始化轮播图
     this.swiper = new window.Swiper(this.swiperDOM.current, {

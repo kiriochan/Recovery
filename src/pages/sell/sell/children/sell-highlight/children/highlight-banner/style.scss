@@ -1,0 +1,29 @@
+.highlight-list {
+    width: 100%;
+    .highlight-item {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        padding: 20px 0 10px 0;
+        .item-left {
+            img {
+                width: 3.75rem;
+                height: 3.75rem;
+                border-radius: 50%;
+            }
+        }
+        .item-text {
+            width: 75%;
+            margin-left: 1.0625rem;
+            p {
+                width: 100%;
+                font-size: 14px;
+                padding-bottom: 5px;
+            }
+            span {
+                font-size: 12px;
+                color: #666;
+            }
+        }
+    }
+}

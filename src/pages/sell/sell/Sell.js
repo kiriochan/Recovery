@@ -10,6 +10,9 @@ import SellRecommend from './children/sell-recommend/sell-recommend';
 import SellHeader from './children/sell-header/sell-header';
 import SellFree from './children/sell-free/sell-free';
 import SellHot from './children/sell-hot/sell-hot';
+import SellHighlight from './children/sell-highlight/sell-highlight';
+import SellService from './children/sell-service/sell-service';
+import SellCooperate from './children/sell-cooperate/sell-cooperate';
 import './style.scss';
 
 class Sell extends Component {
@@ -22,10 +25,11 @@ class Sell extends Component {
                 <AppScroll className='content'>
                     <Banner data={homeData.banner}/>
                     <SellFree/>
-                    <SellHot/>
+                    <SellHot data={homeData.activity}/>
                     <SellRecommend/>
-                    <p onClick={this.props.testClick}>卖手机</p>
-                    
+                    <SellHighlight data={homeData.article}/>
+                    <SellCooperate/>
+                    <SellService/>
                 </AppScroll>
                 
                 <TabBar/>

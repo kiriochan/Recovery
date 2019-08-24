@@ -16,6 +16,9 @@ const SELL_URL = '/poxyA/api/home/home';
 const SELL_CATEGORY = '/poxyA/api/home/category'
 const EXCHANGE_URL = '/poxyA/api/exchange/exchange'
 
+//商品详情
+
+
 export default {
     // SEND_CODE_API,
     SELL_URL,

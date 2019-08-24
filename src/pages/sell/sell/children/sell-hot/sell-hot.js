@@ -4,6 +4,8 @@ import './style.scss';
 
 class SellHot extends Component {
     render() {
+        let {data} = this.props;
+        
         return (
             <div className='sell-subassembly'>
                 <div className='hot-title'>
@@ -20,7 +22,7 @@ class SellHot extends Component {
                          秒   
                     </span>
                 </div>
-                <Banner/>
+                <Banner data={data}/>
             </div>
         );
     }

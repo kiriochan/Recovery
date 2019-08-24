@@ -9,4 +9,26 @@
     h1 {
         font-weight: 500;
     }
+    .city-content {
+        width: 100%;
+        position: absolute;
+        top: 2.75rem;
+        left: 0;
+        bottom: 0;
+        .list {
+            width: 100%;
+            font-size: 14px;
+            color: #333;
+            .list-title {
+                line-height: 35px;
+                padding-left: 15px;
+            }
+            .item {
+                width: 100%;
+                background: #fff;
+                padding-left: 15px;
+                line-height: 40px;
+            }
+        }
+    }
 }

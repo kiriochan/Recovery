@@ -32,8 +32,11 @@ export const requestExchangeData = () => async (dispatch) => {
     let result = await get(api.EXCHANGE_URL);
 
     // console.log('exchange',result);
-    console.log('result',result.data);
+    // console.log('result',result.data);
     
     dispatch(setExchangeData(result.data))
 
-}
+};
+// export const requestDatailData = () =>async(dispatch)=>{
+
+// }
