@@ -15,6 +15,9 @@ const LOGOUT_API = '/poxyA/api/user/logout'
 const SELL_URL = '/poxyA/api/home/home'
 const EXCHANGE_URL = '/poxyA/api/exchange/exchange'
 
+//商品详情
+
+
 export default {
     // SEND_CODE_API,
     SELL_URL,
