@@ -12,7 +12,7 @@ const CategoryRight = (props) => {
                         <li className={'list-li'} key={item.goodsId}>
                             <img className={'li-img'} src={item.originalImg}/>
                             <div className={'li-div'}>
-                                <p className={'li-div-title'}className={'li-text'}>{item.goodsName}</p>
+                                <p className={'li-div-title'}>{item.goodsName}</p>
                                 <p className={'li-div-p'}>回收均价：
                                     <span className={'li-div-span'}>{item.shopPrice}</span>
                                 </p>
