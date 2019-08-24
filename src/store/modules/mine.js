@@ -86,14 +86,14 @@ export const requestSendCodeAction = (phone) => async (dispatch) => {
     }    
 }
 
-// 电话号码和验证码登录
+// 登录
 export const requestLoginByCodeAction = (phone, code) => async (dispatch) => {
     try {
         let result = await post(api.LOGIN_BY_CODE_API, {phone, code});
         console.log(result);
         let action = setLoginStatusAction(true);
         dispatch(action);
-        dispatch(setUserInfo(result.data));
+        dispatch(setUserInfo(result.message));
     } catch (error) {
         console.log('登录失败');
     }
@@ -124,8 +124,6 @@ export const requestLoginOut = ()=>async (dispatch)=>{
     console.log(result);
     // 设置登录状态
     dispatch(setLoginStatusAction(false));
-    //
-    dispatch(getChangeTipAction('重新发送'));
     // 清空用户数据
     dispatch(setUserInfo({}));
 }

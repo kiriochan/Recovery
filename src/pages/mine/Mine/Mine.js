@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Header from '../../../components/app-header/app-header';
 import './style.scss';
@@ -37,10 +38,12 @@ class Mine extends Component {
                         {
                         isLogin ? 
                         <div className="logined">
-                            <p>您已成为我们的 <b>超级会员</b>！</p>
-                            <button onClick={loginOutAction}>
-                                退出登录
-                            </button>
+                            <p><b>大喜！</b>您已成为我们的 <b>超级会员</b>！</p>
+                            <NavLink key="444" to='/mine'>
+                                <button onClick={loginOutAction}>
+                                    退出登录
+                                </button>
+                            </NavLink>
                         </div>
                         :
                         <div className="inpt-wrap">
@@ -62,8 +65,8 @@ class Mine extends Component {
                             </div>
 
                             <button className={`login${this.state.sendClassName}${this.state.loginClassName}`}
-                            onClick={()=>loginByCodeAction(this.state.phone, this.state.code)}>
-                            登录
+                                onClick={()=>loginByCodeAction(this.state.phone, this.state.code)}>
+                                登录
                             </button>
                         </div>
                         }
@@ -75,7 +78,13 @@ class Mine extends Component {
     componentDidMount(){
         // 检查登录是否过期
         this.props.checkLoginAction();
-    };
+        // window.location.reload()
+    }
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.isLogin === true){
+            window.location.reload()
+        }
+    }
 
     backAction = ()=>{
         this.props.history.goBack();
