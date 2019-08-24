@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux'
 
 
-export default class Products extends Component {
+ class Products extends Component {
     render(){
         let {data}= this.props;
-        console.log(data);
+        // console.log(data);
         
         return(
+            
+            
             <ul className="products-content">
                 {
                     data&&data.map((item)=>(
-                        <li className="products-item" key={item.id}>
+                        <li className="products-item" key={item.id} >
                             <img src={item.img} alt=""/>
                             <div className="products-text">
                                 <p className="products-title">{item.title}</p>
@@ -26,6 +29,18 @@ export default class Products extends Component {
                     ))
                 }
             </ul>
+            
         )
     }
 }
+// const mapStateToProps=(state)=>({
+
+// })
+// const mapDispatchToProps=(dispatch)=>({
+//     getDetail(id){
+//         console.log(id);
+        
+//     }
+// })
+
+export default Products

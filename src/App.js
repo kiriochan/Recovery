@@ -15,6 +15,9 @@ const HotSearch = lazy(()=>import('./components/hot-search/hot-search'));
 const SelectCity = lazy(()=>import('./pages/sell/sell/children/select-city/select-city'));
 const Category = lazy(()=>import('./pages/sell/category/Category'));
 
+// 引入换新机子页面
+const More = lazy(()=>import('./components/product-more/more'));
+
 
 
 const AppPanel = (props)=>{
@@ -36,7 +39,8 @@ const AppPanel = (props)=>{
                 <Route path='/sell/search' component={HotSearch}/>
                 <Route path='/sell/selectCity' component={SelectCity}/>
                 <Route path='/sell/category' component={Category}/>
-
+                {/* 换新机子页面 */}
+                <Route path='/exchange/more' component={More} />
             </div>
         </Router>
     )

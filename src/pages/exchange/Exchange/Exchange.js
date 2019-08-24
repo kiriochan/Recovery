@@ -13,13 +13,10 @@ class Exchange extends Component {
 
     render(props){
         let {exchangeData} = this.props;
-      
-        // console.log('123',exchangeData);
-        // console.log(exchangeData.banners);
         let bannerData=exchangeData.mobilebanners;
-        // console.log('234',bannerData);
         let productsData=exchangeData.products;
-        // console.log('098',productsData);
+        console.log('product',exchangeData.products);
+        console.log('laptop',exchangeData.laptop);
         
         return (
             <div className="exchange">
@@ -52,10 +49,13 @@ class Exchange extends Component {
                     </div> 
                     {/*热门换新机型  */}
                     <div className="change-new">
-                        <div className="change-header">
-                            <p className="exchange-title">热门换新机型</p>
-                            <p className="exchange-more">更多机型<i className="iconfont icontri-up"></i></p>
-                        </div>
+                    <div className="change-header">
+                        <p className="exchange-title">热门换新机型</p>
+                        <p className="exchange-more" onClick={this.goMore.bind(this)}>
+                            更多机型
+                            <i className="iconfont icontri-up"></i>
+                        </p>
+                    </div>
                         <Products data={productsData}/>
                     </div>
                     {/* 服务保障 */}
@@ -102,6 +102,10 @@ class Exchange extends Component {
         // console.log(this.props);
         this.props.history.push('/sell/search')
 
+    }
+    goMore(){
+        console.log(this.props);
+        this.props.history.push('/exchange/more')
     }
     componentDidMount() {
         this.props.initData()
