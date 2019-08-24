@@ -4,7 +4,7 @@ import './style.scss';
 export default class Banner extends Component {
   swiperDOM = React.createRef();
   render() {
-    let {data} = this.props;
+    // let {data} = this.props;
     return (
       <div className="swiper-container" ref={this.swiperDOM}>
         <div className="swiper-wrapper">
